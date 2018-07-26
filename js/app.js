@@ -9,7 +9,10 @@
 var rteItalicsDomEl = document.querySelector('.rte-italics')
 
 function handleItalicsBtnClick(){
-  alert('wired up!')
+  var para = document.querySelector('.textbox');
+  para.classList.toggle('rte-italics');
+  
+  
 }
 
 rteItalicsDomEl.addEventListener('click', handleItalicsBtnClick)
@@ -23,7 +26,14 @@ rteItalicsDomEl.addEventListener('click', handleItalicsBtnClick)
 //
 //--------------------------------------------------------
 
+var rteBoldDomEl = document.querySelector('.rte-bold')
 
+function handleBoldBtnClick() {
+  var para = document.querySelector('.textbox');
+  para.classList.toggle('rte-bold');
+}
+
+rteBoldDomEl.addEventListener('click', handleBoldBtnClick)
 
 
 //--------------------------------------------------------
@@ -33,6 +43,15 @@ rteItalicsDomEl.addEventListener('click', handleItalicsBtnClick)
 //        <p class="textbox"> to the value of the button that was clicked
 //
 //--------------------------------------------------------
+
+var btnFontSize = document.querySelectorAll('.rte-fontsize');
+
+btnFontSize.forEach(function (button) {
+  button.addEventListener('click', function (e) {
+    var para = document.querySelector('.textbox');
+    para.style.fontSize = button.textContent;
+  });
+});
 
 
 //--------------------------------------------------------
@@ -44,3 +63,16 @@ rteItalicsDomEl.addEventListener('click', handleItalicsBtnClick)
 //        To access data-* attributes:
 //        https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
 //--------------------------------------------------------
+
+ var btnColor = document.querySelectorAll('.color-palette');
+   
+ btnColor.forEach(function (button) {
+   button.addEventListener('click',function (e) {
+     var para = document.querySelector('.textbox');
+     console.log(para);
+     
+     var btn = e.target;
+     para.style.color = btn.dataset.color;
+     
+   });
+ });

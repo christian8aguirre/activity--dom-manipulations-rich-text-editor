@@ -18,8 +18,19 @@ button{
 	font-size: 16px;
 }
 
+.fontsize--12px{
+	font-size: 12px;
+}
+
 .fontsize--16px{
 	font-size: 16px;
+}
+
+.fontsize--24px{
+	font-size: 24px;
+}
+.fontsize--30px{
+	font-size: 30px;
 }
 
 .rte{
